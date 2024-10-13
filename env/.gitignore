@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+# Ignore Python virtual environments
+venv/
+.venv/
+
+# Ignore the api.env file
+api.env
