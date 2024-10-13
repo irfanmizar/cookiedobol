@@ -31,7 +31,7 @@
         <button class="difficulty" data-value="easy" id="easyButton">Easy</button>
         <button class="difficulty" data-value="medium" id="mediumButton" >Medium</button>
         <button class="difficulty" data-value="hard" id="hardButton" >Hard</button>
-      </div>
+    </div>
 
     <!-- Custom Modal for Buy Premium -->
     <div id="premiumModal" class="modal">
@@ -42,36 +42,43 @@
         </div>
     </div>
     
-    <!-- Number of Questions -->
-    <div class="questions-section">
-      <label for="number-of-questions">Number of Questions:</label>
-      <button class="button-style questions" data-value="5">5</button>
-      <button class="button-style questions" data-value="10">10</button>
-      <button class="button-style questions" data-value="15">15</button>
+    <!-- Number of Questions Section -->
+<div class="questions-section">
+  <label for="number-of-questions">Number of Questions:</label>
+  
+  <!-- Button for 5 questions -->
+  <button class="button-style questions" data-value="5" id="fiveButton">5</button>
+  
+  <!-- Button for 10 questions -->
+  <button class="button-style questions" data-value="10" id="tenButton">10</button>
+  
+  <!-- Button for 15 questions -->
+  <button class="button-style questions" data-value="15" id="fifteenButton">15</button>
+</div>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+        <!-- Hidden file input for uploading PDF files -->
+        <input type="file" id="slideUpload" style="display: none;" accept=".pdf">
+
+        <!-- Visible button to trigger the file upload -->
+        <button id="uploadButton">Upload PDF</button>
+
+        <!-- Display uploaded file name here -->
+        <p id="fileNameDisplay" style="display: none;"></p>
     </div>
 
-      <!-- Slide Upload Section -->
-      <div class="upload-section">
-        <label for="slideUpload">
-          <input type="file" id="slideUpload" accept=".pdf">
-          <p>Upload your slides.pdf here</p>
-        </label>
-      </div>
-  
-  
-    <!-- Generate Quiz Button -->
-        <button id="generateButton">Generate Quiz</button>
-    </div>
+    <!-- Generate Quiz Button (Initially disabled) -->
+    <button id="generateButton">Generate Quiz</button>
 
-
-<!-- This section will be used to display the quiz after the Generate Quiz button is clicked -->
-<div id="quizDisplay" style="display: none;">
-    <h2>Generated Quiz</h2>
-    <div id="questionsContainer"></div> <!-- Questions will be inserted here -->
+  <!-- Quiz Display Section (Initially hidden) -->
+  <div id="quizDisplay" style="display: none;">
+    <h2>Generated Quiz Questions</h2>
+    <ul id="questionsContainer"></ul> <!-- Questions will be inserted here -->
   </div>
-    
 
-  </div>
+
+</div>
 
   <script src="script.js"></script>
 </body>

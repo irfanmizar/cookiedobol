@@ -1,10 +1,12 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from openai import OpenAI
 from dotenv import load_dotenv
+from flask_cors import CORS
 import os
 import pypdf
 
 app = Flask(__name__)
+CORS(app)
 load_dotenv()
 OpenAI.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -12,6 +14,10 @@ UPLOAD_FOLDER = 'uploads/'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -25,6 +31,12 @@ def upload_file():
     if file.filename == '':
         return jsonify({"error": "No file selected"}), 400
 
+    difficulty = request.form.get('difficulty')
+    num_questions = request.form.get('numQuestions')
+
+    if not difficulty or not num_questions:
+        return jsonify({"error": "Missing difficulty or number of questions"}), 400
+
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     file.save(file_path)
 
@@ -32,7 +44,7 @@ def upload_file():
 
     quiz = generate_quiz(extracted_text, "Easy, general and definitions", 5)
 
-    return quiz
+    return jsonify({"quiz": quiz})
 
 def extract_text_from_pdf(pdf_path):
     text = ""

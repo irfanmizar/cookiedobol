@@ -1,200 +1,381 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #00204D; /* Blue background as per the Figma design */
-    color: white;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background-color: #00204D; /* Blue background as per the Figma design */
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 /* Frame 3 - Main Container */
 .frame3-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    gap: 20px;
-    width: 800px; /* Adjust width to match your design */
-    background-color: #1C3E73; /* Lighter blue background for the container */
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-    text-align: center;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+  width: 800px; /* Adjust width to match your design */
+  background-color: #1C3E73; /* Lighter blue background for the container */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center;
+}
 
 /* Title */
 .frame3-container h1 {
-    grid-column: 1 / -1;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Logo Section */
-  .logo-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full height */
-    background-color: #00204D;
-  }
-  
-  /* Logo Styling */
-  .logo {
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  /* Start Button Styling */
-  .start-button {
-    background-color: #ffc1077e; /* Yellow button */
-    color: #00204D; /* Dark blue text */
-    padding: 15px 60px;
-    border: none;
-    border-radius: 5px;
-    font: 'freeman';
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .start-button:hover {
-    background-color: #e0a806;
-  }
-  
-  /* Quiz Setup Section Styling */
-  .quiz-setup-section {
-    display: none;
-    text-align: center;
-  }
-  
-  /* Small logo in Quiz Setup */
-  .small-logo {
-    position: absolute;
-    top: 20px;
-    left:30px;
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the heading */
-  .quiz-setup-section h2 {
-    color: rgb(255, 255, 255);
-    position: absolute;
-    font-size: 30px;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  grid-column: 1 / -1; /* Span across all columns */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 
-  .difficulty-section {
-    grid-column: 2 / 3;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+/* Logo Section */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height */
+  background-color: #00204D;
+}
 
-  .difficulty-section label {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+/* Logo Styling */
+.logo {
+  width: 350px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+@keyframes wow-animation {
+  0% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
   }
- 
-  .difficulty-section button {
-    padding: 10px 30px;
-    margin: 5px;
-    background-color: #3E5B7D;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+  25% {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
   }
-  
-  .difficulty-section button:hover {
-    background-color: #ffffff; /* Optional: Change background color on hover */
-    color: #000000; /* Optional: Change text color on hover */
+  50% {
+    transform: scale(1.2) rotate(-3deg);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.9);
   }
-  
-  
+  75% {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+  }
+}
+
+/* Apply constant animation to the button */
+#startButton {
+  animation: wow-animation 2s infinite ease-in-out; /* Constant animation */
+  background-color: #FFA500; /* Orange background */
+  color: #FFFFFF; /* White text */
+  padding: 15px 100px;
+  font-size: 25px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Initial glow */
+}
+
+#startButton:hover {
+  background-color: #FF8C00; /* Slightly darker orange on hover */
+}
+
+
+/* Quiz Setup Section Styling */
+.quiz-setup-section {
+  display: none;
+  text-align: center;
+}
+
+/* Small logo in Quiz Setup */
+.small-logo {
+  position: absolute;
+  top: 20px;
+  left:30px;
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Style the heading */
+.quiz-setup-section h2 {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  font-size: 30px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.difficulty-section {
+  grid-column: 2 / 3;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.difficulty-section label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.difficulty-section button {
+  padding: 10px 30px;
+  margin: 5px;
+  background-color: #3E5B7D;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.difficulty-section button:hover {
+  background-color: #ffffff; /* Optional: Change background color on hover */
+  color: #000000; /* Optional: Change text color on hover */
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Scale up a little */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Apply this class to the button when clicked */
+.pop-up-effect {
+  animation: pop-up 0.3s ease-in-out; /* Quick pop-up effect */
+}
+
+/* Modal container - hidden by default */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* On top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+}
+
+/* Glowing border effect for modal content */
+@keyframes glowing-border {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 30px rgba(255, 165, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 30px rgba(255, 165, 0, 0.6);
+  }
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #1e1e1e; /* Dark background to make glowing effect pop */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 30px;
+  border-radius: 15px;
+  width: 40%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.6); /* Glowing box shadow to match h2 */
+  text-align: center;
+  position: relative;
+  border: 2px solid transparent; /* Border for glowing effect */
+  background-clip: padding-box;
+}
+
+/* Close button (X) */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Glowing effect for h2 Coming soon*/
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #FF8C00, 0 0 10px #FF8C00, 0 0 20px #FF8C00, 0 0 30px #FFA500, 0 0 40px #FFA500;
+    color: #FFA500; /* Orange */
+  }
+  50% {
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700;
+    color: #FFD700; /* Gold */
+  }
+  100% {
+    text-shadow: 0 0 5px #FF8C00, 0 0 10px #FF8C00, 0 0 20px #FF8C00, 0 0 30px #FFA500, 0 0 40px #FFA500;
+    color: #FFA500; /* Back to Orange */
+  }
+}
+
+/* Apply glow effect to h2 */
+.modal-content h2 {
+  margin-top: 100px;
+  font-size: 40px;
+  color: #FFA500;
+  animation: glow 2s infinite alternate; /* Glowing effect applied */
+  transition: color 0.5s ease-in-out;
+}
+
+/* Adjust description text (Unlock additional features) */
+.modal-content p {
+  color: #FFD700; /* Matching text color with h2 */
+  font-size: 18px;
+  margin-bottom: 40px; /* Give space between paragraph and button */
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Add a subtle glow to the text */
+}
+
+
 /* Number of Questions Section */
 .questions-section {
-    grid-column: 2 / 3;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .questions-section label {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .questions-section button {
-    padding: 10px 30px;
-    margin: 10px;
-    background-color: #3E5B7D;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .questions-section button:hover {
-    background-color: #2B4162;
-  }
-  
+grid-column: 2/3;
+display: flex;
+justify-content: center;
+align-items: flex-end;
+gap: 10px;
+margin-top: 10px;
+}
+/* General button styling */
+.button-style {
+padding: 10px 30px;
+margin: 5px;
+background-color: #FFC107; /* Same as Easy button */
+border: none;
+color: #00204D; /* Dark text color */
+border-radius: 5px;
+font-size: 1.2rem;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* Hover effect for buttons */
+.button-style:hover {
+background-color: #e0a806;
+color: #00204D;
+}
+
+.button-style.active {
+background-color: #FFC107; /* Yellow background for selected button */
+color: #00204D; /* Dark text color */
+}
+.questions-section label {
+  font-size: 1.2rem;
+  color: white;
+  margin-right: 10px;
+}
+
+.questions-section button {
+  padding: 10px 30px;
+  margin: 5px;
+  background-color: #3E5B7D;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.questions-section button:hover {
+  background-color: #2B4162;
+}
+.selected {
+  background-color: #FFD700; /* Yellow background for selected buttons */
+  color: #00204D; /* Optional: dark text color to match your theme */
+}
+
 /* Upload Section */
 .upload-section {
-    grid-column: 1 / 2;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    flex-direction: column;
-    background-color: #F0F0F0;
-    width: 100%;
-    height: 250px;
-    border: 2px dashed #FFF;
-    border-radius: 10px;
-    color: #333;
-  }
-  
-  #uploadButton {
-    margin-top: 10px;
-    padding: 10px 30px;
-    background-color: #4A76A8;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #uploadButton:hover {
-    background-color: #365F86;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F0F0F0;
+  width: 100%;
+  height: 250px;
+  border: 2px dashed #B0B0B0;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.upload-section input[type="file"] {
+  display: none;
+}
+
+.upload-section p {
+  color:#0e0e0e;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+
 /* Generate Quiz Button */
 #generateButton {
-    grid-column: 1 / -1;
-    padding: 15px;
-    background-color: #FFB400;
-    color: #002B5C;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  #generateButton:disabled {
-    background-color: #7C848F;
-    cursor: not-allowed;
-  }
-  
+  grid-column: 1 / -1;
+  padding: 15px;
+  background-color: #FFB400;
+  color: #002B5C;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#generateButton:disabled {
+  background-color: #7C848F;
+  cursor: not-allowed;
+}
+
+
+/* Hide the quiz display section initially */
+#quizDisplay {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Styling for the container that holds the questions */
+.questionsContainer {
+  text-align: left;
+  margin-top: 10px;
+}
+
+#questionsContainer p {
+  font-size: 18px;
+  margin: 10px 0;
+}
