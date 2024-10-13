@@ -4,4 +4,4 @@ venv/
 .venv/
 
 # Ignore the api.env file
-api.env
+.env

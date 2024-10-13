@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Logo and Start Button (Frame 2) -->
+    <div class="logo-section">
+      <img src="logo.png" alt="Logo" class="logo">
+      <button id="startButton" class="start-button">Start Learning</button>
+    </div>
+    
+
+    <!-- Quiz Setup Section (Frame 3) -->
+    <div class="quiz-setup-section">
+        <!-- Small Logo in Quiz Setup Section -->
+        <img src="logo.png" alt="Logo" class="small-logo">
+        <h2>QUIZ SETUP</h2> 
+
+        
+    <!-- Difficulty Section -->
+    <div class="difficulty-section">
+        <label>Difficulty</label>
+        <button class="difficulty" data-value="easy" id="easyButton">Easy</button>
+        <button class="difficulty" data-value="medium" id="mediumButton" >Medium</button>
+        <button class="difficulty" data-value="hard" id="hardButton" >Hard</button>
+      </div>
+
+    <!-- Custom Modal for Buy Premium -->
+    <div id="premiumModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>COMING SOON</h2>
+        <p>Unlock additional features by upgrading to PREMIUM!</p>
+        </div>
+    </div>
+    
+    <!-- Number of Questions -->
+    <div class="questions-section">
+      <label for="number-of-questions">Number of Questions:</label>
+      <button class="button-style questions" data-value="5">5</button>
+      <button class="button-style questions" data-value="10">10</button>
+      <button class="button-style questions" data-value="15">15</button>
+    </div>
+
+      <!-- Slide Upload Section -->
+      <div class="upload-section">
+        <label for="slideUpload">
+          <input type="file" id="slideUpload" accept=".pdf">
+          <p>Upload your slides.pdf here</p>
+        </label>
+      </div>
+  
+  
+    <!-- Generate Quiz Button -->
+        <button id="generateButton">Generate Quiz</button>
+    </div>
+
+
+<!-- This section will be used to display the quiz after the Generate Quiz button is clicked -->
+<div id="quizDisplay" style="display: none;">
+    <h2>Generated Quiz</h2>
+    <div id="questionsContainer"></div> <!-- Questions will be inserted here -->
+  </div>
+    
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

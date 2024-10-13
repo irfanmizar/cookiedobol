@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #00204D; /* Blue background as per the Figma design */
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+/* Frame 3 - Main Container */
+.frame3-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+    width: 800px; /* Adjust width to match your design */
+    background-color: #1C3E73; /* Lighter blue background for the container */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-align: center;
+  }
+
+/* Title */
+.frame3-container h1 {
+    grid-column: 1 / -1;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Logo Section */
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    background-color: #00204D;
+  }
+  
+  /* Logo Styling */
+  .logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Start Button Styling */
+  .start-button {
+    background-color: #ffc1077e; /* Yellow button */
+    color: #00204D; /* Dark blue text */
+    padding: 15px 60px;
+    border: none;
+    border-radius: 5px;
+    font: 'freeman';
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .start-button:hover {
+    background-color: #e0a806;
+  }
+  
+  /* Quiz Setup Section Styling */
+  .quiz-setup-section {
+    display: none;
+    text-align: center;
+  }
+  
+  /* Small logo in Quiz Setup */
+  .small-logo {
+    position: absolute;
+    top: 20px;
+    left:30px;
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the heading */
+  .quiz-setup-section h2 {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-size: 30px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .difficulty-section {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .difficulty-section label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+ 
+  .difficulty-section button {
+    padding: 10px 30px;
+    margin: 5px;
+    background-color: #3E5B7D;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .difficulty-section button:hover {
+    background-color: #ffffff; /* Optional: Change background color on hover */
+    color: #000000; /* Optional: Change text color on hover */
+  }
+  
+  
+/* Number of Questions Section */
+.questions-section {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .questions-section label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .questions-section button {
+    padding: 10px 30px;
+    margin: 10px;
+    background-color: #3E5B7D;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .questions-section button:hover {
+    background-color: #2B4162;
+  }
+  
+/* Upload Section */
+.upload-section {
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    background-color: #F0F0F0;
+    width: 100%;
+    height: 250px;
+    border: 2px dashed #FFF;
+    border-radius: 10px;
+    color: #333;
+  }
+  
+  #uploadButton {
+    margin-top: 10px;
+    padding: 10px 30px;
+    background-color: #4A76A8;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #uploadButton:hover {
+    background-color: #365F86;
+  }
+  
+/* Generate Quiz Button */
+#generateButton {
+    grid-column: 1 / -1;
+    padding: 15px;
+    background-color: #FFB400;
+    color: #002B5C;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  #generateButton:disabled {
+    background-color: #7C848F;
+    cursor: not-allowed;
+  }
+  
